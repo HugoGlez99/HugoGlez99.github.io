@@ -3,40 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <title>HAGP</title>
-    <script>
-      /* invoca a registraServiceWorker instalar la aplicación en el caché del
-       * navegador. No se espera a que termine el registro. */
-      registraServiceWorker();
-      /** Registra un service worker para instalar la aplicación en el
-       * caché del navegador. La palabra reservada async indica que no espera
-       * a que termine y libera el registro de activación que lo llamó. */
-      async function registraServiceWorker() {
-        if ("serviceWorker" in navigator) {
-          try {
-            /* Registra el service worker y espera que termine. El service
-             * worker debe estar en la carpeta public. La palabra await indica
-             * que espera a que termine y solo puede usarse en una función
-             * async. */
-            const registro = await navigator.serviceWorker.register("sw.js");
-            // Registro correcto y se muestra en la consola.
-            console.log("Service Worker registrado.");
-            console.log(registro);
-          } catch (e) {
-            // Hubo un error en el registro.
-            muestraError(e);
-          }
-        }
-      }
-      /** Procesa una excepción y muestra un mensaje de error.
-       * @param {Error} e descripción del error. */
-      function muestraError(e) {
-        console.log(e);
-        alert(e.message);
-      }
-    </script>
     <script src="js/registraServiceWorker.js"></script>
 
     <!-- Ícono para la página web. Debe ponerse en la raíz de la página. -->
@@ -60,65 +27,12 @@
     <script type="module" src="cmp/mi-footer.js"></script>
     <link rel="stylesheet" href="css/estilos.css">
   <body>
-    <body>
-      <form action=javascript:calculaArea();> 
-        <header id="header">
-          <h1>Calculadora del área del círculo</h1>
-          <button id="button">
-            <span class="material-icons" id="icon">
-              play_arrow
-            </span>
-          </button>
-        </header>
-        <section id="h1">
-        <p class="campo"><label id="h1">Introduzca el radio del circulo por favor</label></p>
-        <br>
-        <p class="campo flotante">
-  
-          <input id=radio type=number required min="0">
-        </p>
-        <p class="campo flotamte"><output id=outResultado></output></p>
-      </form>
-      <script>
-        function calculaArea(){
-          try {
-            const r = radio.valueAsNumber;
-            valida(r !== 0, "Valor del radio incorrecto.");
-            const resultado = `El área  del círculo es `+ (r * r) * (3.1416);
-            outResultado.value = resultado;
-          } catch (e) {
-            console.log;
-            alert(e.message);
-          }
-          function valida(cond, mensaje) {
-            if (!cond) {
-              const resultado = "";
-              outResultado.value = resultado;
-            throw new Error(mensaje);
-            }
-          }
-        }
-      </script>
+    <h1>PWA Hugo Glez</h1>
+    <p>Hola 🤗</p>
+    <footer>
       <p>
-  
-        <output id="mensaje" id="button">
-       
-  
-          <progress max="100" id="barra">Cargando Firebase SDK&hellip;</progress>
-        </output>
+        <mi-footer></mi-footer>
       </p>
-      </h2><mi-footer></mi-footer>
-      <script>
-        try {
-          let app = firebase.app();
-          let apis = ["auth", "firestore", "storage"]
-            .filter(api => typeof app[api] === "function");
-          mensaje.value = ``;
-        } catch (e) {
-          muestraError(e);
-        }
-      </script>
-    <mi-footer></mi-footer>
     </footer>
   </body>
 </html>
