@@ -1,6 +1,7 @@
-class MiFooter extends HTMLElements{
-connectedCallback(){
-this.innerHTML=/* html*/ ´Copyrigth &copy; Hugo Glez´;
+class MiFooter extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = /* html */
+      `Copyright &copy; Hugo Alberto Glez`;
+  }
 }
-}
-customElements.define ("mi-footer",MiFooter);
+customElements.define("mi-footer", MiFooter);
