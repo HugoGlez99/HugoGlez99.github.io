@@ -34,7 +34,7 @@
 
     
   <body>
-    <form action="javascript:;">
+    
       <header>
         <div class="toolbar">
           <h1 align="center">Fórmula Física</h1>
@@ -52,24 +52,22 @@
          
 
         <campo-dinámico>
-          <input type="text" id="kg" required pattern="[0-9]" title="Ingresa solo números enteros"/>
-
+          <input type="text" id="kg"  title="Ingresa solo números enteros"/>
           <label for="kg">Peso</label>
           <small>Obligatorio</small>
         </campo-dinámico>
 
         <campo-dinámico>
-          <input type="text" id="m" required pattern="[0-9]" title="Ingresa solo números enteros"/>
-          <!-- <input id="email" type="email" autocomplete="off"> -->
+          <input type="text" id="m"  title="Ingresa solo números "/>
+          
           <label for="m">Altura</label>
           <small>Obligatorio</small>
-        </campo-dinámico>      
+        </campo-dinámico>  
       </div>
      
     <p>IMC: <span id="imc"></span></p>
     <p>Lectura: <span id="lectura"></span></p>
-    </form>
-   
+  
 
     <script type="text/javascript">
       calc = document.getElementById("calc");
