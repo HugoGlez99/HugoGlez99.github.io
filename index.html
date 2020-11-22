@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Hugpo-PWA</title>
     <script src="js/registraServiceWorker.js"></script>
-
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+    rel="stylesheet">
     <!-- Ícono para la página web. Debe ponerse en la raíz de la página. -->
     <link rel="icon" sizes="32x32" href="favicon.ico">
 
@@ -55,7 +59,7 @@
     <form action="javascript:;">
       <header>
         <div class="toolbar">
-          <h1>Layout</h1>
+          <h1>Formula Fisica</h1>
           <span class="acciones">
             <button><span class="material-icons">save</span></button>
           </span>
@@ -65,32 +69,22 @@
         <p>User Agent: <output id="agent"></output></p>
         <campo-dinámico>
           <input id="nombre" required>
-          <label for="nombre">Nombre</label>
+          <label for="nombre">numero1</label>
           <small>Requerido</small>
         </campo-dinámico>
+
         <campo-dinámico>
-          <input id="email" type="email">
-          <!-- <input id="email" type="email" autocomplete="off"> -->
-          <label for="email">Email</label>
+          <input id="nombre1" required>
+          <label for="nombre1">numero2</label>
+          <small>Requerido</small>
         </campo-dinámico>
+
         <campo-dinámico>
-          <!--
-          textarea
-            Control de captura de texto de varios renglones.
-          rows="3"
-            Número de renglones. -->
-          <textarea id="dirección" rows="3" required></textarea>
-          <label for="dirección">Dirección</label>
+          <input id="nombre3" required>
+          <label for="nombre3">numero3</label>
+          <small>Requerido</small>
         </campo-dinámico>
-        <campo-dinámico>
-          <select id="grupo">
-            <option value=""></option>
-            <option value="IC21">IC-21</option>
-            <option value="IC22">IC-22</option>
-            <option value="IC23">IC-23</option>
-          </select>
-          <label for="grupo">Grupo</label>
-        </campo-dinámico>
+        
         
       </div>
     </form>
