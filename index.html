@@ -40,7 +40,7 @@
           <h1 align="center">Fórmula Física</h1>
 
           <span class="acciones">
-            <button onclick="calcular();"><span class="material-icons">save</span></button>
+            <button onclick="calc();"><span class="material-icons">save</span></button>
           </span>
         
         </div>
@@ -54,21 +54,22 @@
         <campo-dinámico>
           <input type="text" id="kg" required pattern="[0-9]" title="Ingresa solo números enteros"/>
 
-          <label for="I">I = Corriente (A)</label>
+          <label for="kg">Peso</label>
           <small>Obligatorio</small>
         </campo-dinámico>
 
         <campo-dinámico>
           <input type="text" id="m" required pattern="[0-9]" title="Ingresa solo números enteros"/>
           <!-- <input id="email" type="email" autocomplete="off"> -->
-          <label for="R">R = Resistencia (Ω)</label>
+          <label for="m">Altura</label>
           <small>Obligatorio</small>
         </campo-dinámico>      
       </div>
-      
-    </form>
-    <center><button onclick="calc();">Calcular </button></center>
+     
+    <p>IMC: <span id="imc"></span></p>
     <p>Lectura: <span id="lectura"></span></p>
+    </form>
+   
 
     <script type="text/javascript">
       calc = document.getElementById("calc");
