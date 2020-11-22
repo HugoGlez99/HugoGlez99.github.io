@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Hugpo-PWA</title>
+    <title>Hugo-PWA</title>
     <script src="js/registraServiceWorker.js"></script>
     <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -30,80 +30,27 @@
 
     <script type="module" src="cmp/mi-footer.js"></script>
     <link rel="stylesheet" href="css/estilos.css">
-    <script>
-      class CampoDinámico extends HTMLElement {
-        connectedCallback() {
-          this.ganaFoco = this.ganaFoco.bind(this);
-          this.pierdeFoco = this.pierdeFoco.bind(this);
-          this.addEventListener("focus", this.ganaFoco, true);
-          this.addEventListener("focusout", this.pierdeFoco, true);
-        }
-        get control() {
-          return this.querySelector("input,textarea,select");
-        }
-        ganaFoco() {
-          this.control.classList.remove("control_sin_foco");
-        }
-        pierdeFoco() {
-          const control = this.control;
-          if (control.value.length === 0) {
-            control.classList.remove("control_sin_foco");
-          } else {
-            control.classList.add("control_sin_foco");
-          }
-        }
-      }
-      customElements.define("campo-dinámico", CampoDinámico);
-    </script>
+    
+    <h4>Formula fisica</h4>
+    <br><br>
+    <input type="number" placeholder="numero1" id="num1"><br><br>
+    <input type="number" placeholder="numero2" id="num2"><br><br>
+    <input type="number" placeholder="numero3" id="num3"><br><br>
+    <input type="number" placeholder="numero4" id="num4"><br><br>
+
+    <input type="button" name="name" value="calcula" onclick="Pluss();s">
   <body>
-    <form action="javascript:;">
-      <header>
-        <div class="toolbar">
-          <h1>Formula Fisica</h1>
-          <span class="acciones">
-            <button><span class="material-icons">save</span></button>
-          </span>
-        </div>
-      </header>
-      <div class="contenido">
-        <p>User Agent: <output id="agent"></output></p>
-        <campo-dinámico>
-          <input id="nombre" required>
-          <label for="nombre">numero1</label>
-          <small>Requerido</small>
-        </campo-dinámico>
-
-        <campo-dinámico>
-          <input id="nombre1" required>
-          <label for="nombre1">numero2</label>
-          <small>Requerido</small>
-        </campo-dinámico>
-
-        <campo-dinámico>
-          <input id="nombre3" required>
-          <label for="nombre3">numero3</label>
-          <small>Requerido</small>
-        </campo-dinámico>
-        
-        
-      </div>
-    </form>
-   
+    <script type="number/javascript">
+   funcion Pluss(){
+     var num1=parseInt(document.getElementById('num1').value);
+     console.log(num1);
+   }
+  </script>
     <footer>
       <p>
         <mi-footer></mi-footer>
       </p>
     </footer>
-    <script>
-      // Recupera la descripción del navegador en que se ejecuta este código.
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      agent.value = userAgent;
-      if (/android/i.test(userAgent)) {
-        document.body.classList.add("android");
-      }
-      if (/iPad|iPhone|iPod|Mac/.test(userAgent) && !window.MSStream) {
-        document.body.classList.add('ios');
-      }
-    </script>
+   
   </body>
 </html>
