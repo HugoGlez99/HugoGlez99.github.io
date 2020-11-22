@@ -26,15 +26,90 @@
 
     <script type="module" src="cmp/mi-footer.js"></script>
     <link rel="stylesheet" href="css/estilos.css">
+    <script>
+      class CampoDinámico extends HTMLElement {
+        connectedCallback() {
+          this.ganaFoco = this.ganaFoco.bind(this);
+          this.pierdeFoco = this.pierdeFoco.bind(this);
+          this.addEventListener("focus", this.ganaFoco, true);
+          this.addEventListener("focusout", this.pierdeFoco, true);
+        }
+        get control() {
+          return this.querySelector("input,textarea,select");
+        }
+        ganaFoco() {
+          this.control.classList.remove("control_sin_foco");
+        }
+        pierdeFoco() {
+          const control = this.control;
+          if (control.value.length === 0) {
+            control.classList.remove("control_sin_foco");
+          } else {
+            control.classList.add("control_sin_foco");
+          }
+        }
+      }
+      customElements.define("campo-dinámico", CampoDinámico);
+    </script>
   <body>
-    <h1>Ejemplo de PWA</h1>
-    <p>Hola Hugo</p>
-    
+    <form action="javascript:;">
+      <header>
+        <div class="toolbar">
+          <h1>Layout</h1>
+          <span class="acciones">
+            <button><span class="material-icons">save</span></button>
+          </span>
+        </div>
+      </header>
+      <div class="contenido">
+        <p>User Agent: <output id="agent"></output></p>
+        <campo-dinámico>
+          <input id="nombre" required>
+          <label for="nombre">Nombre</label>
+          <small>Requerido</small>
+        </campo-dinámico>
+        <campo-dinámico>
+          <input id="email" type="email">
+          <!-- <input id="email" type="email" autocomplete="off"> -->
+          <label for="email">Email</label>
+        </campo-dinámico>
+        <campo-dinámico>
+          <!--
+          textarea
+            Control de captura de texto de varios renglones.
+          rows="3"
+            Número de renglones. -->
+          <textarea id="dirección" rows="3" required></textarea>
+          <label for="dirección">Dirección</label>
+        </campo-dinámico>
+        <campo-dinámico>
+          <select id="grupo">
+            <option value=""></option>
+            <option value="IC21">IC-21</option>
+            <option value="IC22">IC-22</option>
+            <option value="IC23">IC-23</option>
+          </select>
+          <label for="grupo">Grupo</label>
+        </campo-dinámico>
+        
+      </div>
+    </form>
    
     <footer>
       <p>
         <mi-footer></mi-footer>
       </p>
     </footer>
+    <script>
+      // Recupera la descripción del navegador en que se ejecuta este código.
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      agent.value = userAgent;
+      if (/android/i.test(userAgent)) {
+        document.body.classList.add("android");
+      }
+      if (/iPad|iPhone|iPod|Mac/.test(userAgent) && !window.MSStream) {
+        document.body.classList.add('ios');
+      }
+    </script>
   </body>
 </html>
