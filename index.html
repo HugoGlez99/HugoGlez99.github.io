@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HAGP-PWA</title>
     <script src="js/registraServiceWorker.js"></script>
-
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+    rel="stylesheet">
     <!-- Ícono para la página web. Debe ponerse en la raíz de la página. -->
     <link rel="icon" sizes="32x32" href="favicon.ico">
 
@@ -23,17 +27,10 @@
     <link rel="apple-touch-icon" sizes="256x256" href="img/icono256.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/icono1024.png">
     <link rel="apple-touch-icon" sizes="2048x2048" href="img/icono2048.png">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
 
     <script type="module" src="cmp/mi-footer.js"></script>
     <style>
-      /* :root
+       /* :root
        * Elemento raíz del documento. En este caso corresponde al elemento html.
        */
        :root {
@@ -225,7 +222,7 @@
     </style>
     
 
-    </head>
+    
   <body>
     
       <header>
@@ -250,8 +247,8 @@
 
         <campo-dinámico>
           <center>
-            <p>Ingresa solo números enteros</p>
-            <input type="text" id="kg" required pattern="[0-9]"/>
+            <p>Ingrese peso (kg):</p>
+            <input type="text" id="kg" required pattern="[0-9]" title="Ingresa solo números enteros"/>
             <label for="kg">Peso(kg) </label>
             <small>Obligatorio</small>
           </center>
@@ -260,16 +257,16 @@
         
           <campo-dinámico>
             <center>  
-            <p>Metros y centimetros</p>
-          <input type="text" id="m"  required/>
+            <p>Ingrese Altura (m):</p>
+          <input type="text" id="m"  title="Metros y centimetros"/>
           <label for="m">Estatura(m)</label>
           <small>Obligatorio</small>
         </center>
         </campo-dinámico>  
         
         <campo-dinámico>
-          <b>IMC: <span id="imc"></span></b>
-          <b>Lectura: <span id="lectura"></span></b>
+        <p>IMC: <span id="imc"></span></p>
+        <p>Lectura: <span id="lectura"></span></p>
         <br><br>
       </campo-dinámico>
      
